@@ -7,13 +7,9 @@ MAINTAINER Wido den Hollander <wido@widodh.nl>
 RUN apt-get -y update
 RUN apt-get install -y curl
 
-# statsd
 RUN mkdir /src \
     && cd /src \
-    && curl -SL -o statsd.tar.gz https://github.com/etsy/statsd/archive/v$STATSD_VERSION.tar.gz \
-    && mkdir statsd \
-    && tar xvf statsd.tar.gz -C statsd --strip-components=1 \
-    && rm statsd.tar.gz
+    && git clone https://github.com/etsy/statsd.git statsd
 
 RUN mkdir /etc/statsd
 ADD config.js /etc/statsd/config.js
