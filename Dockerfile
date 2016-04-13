@@ -20,4 +20,4 @@ ADD config.js /etc/statsd/config.js
 
 EXPOSE 8125/udp 8126
 
-CMD ["/usr/local/bin/node", "/src/statsd/stats.js", "/etc/statsd/config.js"]
+CMD ["node", "/src/statsd/stats.js", "/etc/statsd/config.js"]
