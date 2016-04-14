@@ -8,7 +8,7 @@ a release.
 ## Running
 Example to run the docker instance:
 
-    sudo docker run -e GRAPHITE_HOST=graphite.example.com -P -d pcextreme/docker-statsd
+    sudo docker run -e GRAPHITE_HOST=graphite.example.com -P -d pcextreme/statsd
 
 ## Building
 Examle to build the image:
