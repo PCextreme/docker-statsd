@@ -11,10 +11,10 @@ RUN apt-get install -y curl
 RUN mkdir /src \
     && cd /src \
     && curl -SL -o statsd.tar.gz https://github.com/etsy/statsd/archive/v${STATSD_VERSION}.tar.gz \
-    && mkdir statsd \
-    && tar xvf statsd.tar.gz -C statsd --strip-components=1 \
     && echo "${STATSD_CHECKSUM}  statsd.tar.gz" > sha1sums.txt \
     && sha1sum -c sha1sums.txt \
+    && mkdir statsd \
+    && tar xvf statsd.tar.gz -C statsd --strip-components=1 \
     && rm sha1sums.txt statsd.tar.gz
 
 RUN mkdir /etc/statsd
